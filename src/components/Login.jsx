@@ -574,6 +574,7 @@ export default function Login() {
     try {
       setSendingOtp(true);
       await api.post("/send-otp", { mobile, recaptcha_token: captchaToken });
+	  console.log(api);
       setOtpSent(true);
       setTimer(60);
     } catch (e) {
