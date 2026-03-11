@@ -680,11 +680,9 @@ export default function Login() {
             <div className="login-logo">
               <img src="/aaas.png" alt="Atal Amrit Abhiyan Society" />
             </div>
-            <div className="login-org">Health Insurance Scheme Recruitment</div>
+            <div className="login-org"> Recruitment</div>
             <div className="login-title">Atal Amrit Abhiyan Society</div>
-            <div className="login-subtitle">
-              Secure OTP-based applicant login
-            </div>
+            <div className="login-subtitle">Post - Solution Architect</div>
           </div>
 
           {/* BODY */}
