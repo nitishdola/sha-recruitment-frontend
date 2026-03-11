@@ -859,7 +859,7 @@ export default function Login() {
             <p className="footer-note">
               By continuing, you agree to the terms of the
               <br />
-              Atal Amrit Abhiyan Health Insurance Scheme.
+              Atal Amrit Abhiyan Society
             </p>
           </div>
         </div>
