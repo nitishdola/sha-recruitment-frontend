@@ -542,7 +542,6 @@ const styles = `
   }
 `;
 
-//const RECAPTCHA_SITE_KEY = "6LfYv4UsAAAAANY7tU4YKJvQpisx-Qb6Z8l2KTW5";
 const RECAPTCHA_SITE_KEY = "6LcRvYUsAAAAAOCIwqauyIwn4ikHV33yXvHigCLd";
 
 export default function Login() {
