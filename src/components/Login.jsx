@@ -543,7 +543,8 @@ const styles = `
 `;
 
 //const RECAPTCHA_SITE_KEY = "6LfYv4UsAAAAANY7tU4YKJvQpisx-Qb6Z8l2KTW5";
-const RECAPTCHA_SITE_KEY = "6LcRvYUsAAAAAOCIwqauyIwn4ikHV33yXvHigCLd-Qb6Z8l2KTW5";
+const RECAPTCHA_SITE_KEY =
+  "6LcRvYUsAAAAAOCIwqauyIwn4ikHV33yXvHigCLd-Qb6Z8l2KTW5";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -555,6 +556,8 @@ export default function Login() {
   const [otpSent, setOtpSent] = useState(false);
   const [verifying, setVerifying] = useState(false);
   const [toast, setToast] = useState("");
+
+  console.log(RECAPTCHA_SITE_KEY);
 
   const showToast = (msg) => {
     setToast(msg);
