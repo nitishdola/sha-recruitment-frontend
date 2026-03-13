@@ -22,26 +22,43 @@ const styles = `
   }
 
   .header-inner {
-    max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 72px;
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 80px;
     display: flex; align-items: center; justify-content: space-between;
   }
 
   .header-brand { display: flex; align-items: center; gap: 14px; }
 
   .header-icon {
-    width: 40px; height: 40px; background: rgba(255,255,255,0.15);
-    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; background: rgba(255,255,255,0.15);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
     backdrop-filter: blur(4px);
   }
 
   .header-title {
-    font-family: 'Playfair Display', serif; font-size: 1.25rem;
-    color: #fff; font-weight: 600; letter-spacing: 0.01em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #fff; font-weight: 700; letter-spacing: 0.01em;
+    line-height: 1.3;
+  }
+
+  .header-role {
+    display: inline-block;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1e3a5f;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 30px;
+    margin-left: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+    border: 1px solid rgba(255,255,255,0.3);
+    vertical-align: middle;
   }
 
   .header-subtitle {
     font-size: 0.72rem; color: rgba(255,255,255,0.6);
-    letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px;
   }
 
   .logout-btn {
@@ -66,8 +83,73 @@ const styles = `
     to   { opacity: 1; transform: translateY(0); }
   }
 
+  .post-banner {
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+    border-radius: 10px 1px 10px 10px;
+    padding: 1rem 2rem 0.5rem 2rem;
+    margin-bottom: 0;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -2px 12px rgba(30,58,95,0.04);
+  }
+
+  .post-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .post-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #1e40af, #1e3a5f);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(30, 64, 175, 0.2);
+  }
+
+  .post-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+
+  .post-name-large {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #1e3a5f, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .post-badge {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1e3a5f;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    letter-spacing: 0.06em;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    white-space: nowrap;
+  }
+
   .progress-bar-wrap {
-    background: #fff; border-radius: 16px; padding: 1.25rem 2rem;
+    background: #fff; border-radius: 10px; padding: 1.25rem 2rem;
     margin-bottom: 1.5rem; box-shadow: 0 2px 12px rgba(30,58,95,0.08);
     display: flex; align-items: center; gap: 1rem;
   }
@@ -179,7 +261,7 @@ const styles = `
     font-size: 1.1rem; flex-shrink: 0;
   }
 
-  .card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #1e3a5f; margin: 0; }
+  .card-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 1.1rem; font-weight: 600; color: #1e3a5f; margin: 0; }
 
   .card-body { padding: 1.75rem 2rem; }
 
@@ -566,8 +648,8 @@ export default function UserDashboard() {
             <div className="header-brand">
               <div className="header-icon">
                 <svg
-                  width="20"
-                  height="20"
+                  width="22"
+                  height="22"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="white"
@@ -577,8 +659,13 @@ export default function UserDashboard() {
                 </svg>
               </div>
               <div>
-                <div className="header-title">Online Application Form</div>
-                <div className="header-subtitle">Post : SOLUTION ARCHITECT</div>
+                <div className="header-title">
+                  Online Application Form
+                  <span className="header-role">Solution Architect</span>
+                </div>
+                <div className="header-subtitle">
+                  Apply for Solution Architect Online
+                </div>
               </div>
             </div>
             <button onClick={logout} className="logout-btn">
@@ -588,7 +675,17 @@ export default function UserDashboard() {
         </header>
 
         <div className="form-container">
-          <div className="progress-bar-wrap">
+          <div className="post-banner">
+            <div className="post-banner-left">
+              <div className="post-icon">🎯</div>
+              <div>
+                <div className="post-label">Applying for</div>
+                <div className="post-name-large">Solution Architect</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="progress-bar-wrap mt-0.5">
             <span className="progress-label">Form Completion</span>
             <div className="progress-track">
               <div
