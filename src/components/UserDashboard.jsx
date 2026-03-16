@@ -518,6 +518,7 @@ function ErrorPanel({ errors, onDismiss }) {
 
 export default function UserDashboard() {
   const [form, setForm] = useState({
+    post_applied: "",
     name: "",
     email: "",
     mobile: "",
@@ -661,11 +662,11 @@ export default function UserDashboard() {
               <div>
                 <div className="header-title">
                   Online Application Form
-                  <span className="header-role">Solution Architect</span>
+                  {/* <span className="header-role">Solution Architect</span> */}
                 </div>
-                <div className="header-subtitle">
+                {/* <div className="header-subtitle">
                   Apply for Solution Architect Online
-                </div>
+                </div> */}
               </div>
             </div>
             <button onClick={logout} className="logout-btn">
@@ -680,7 +681,9 @@ export default function UserDashboard() {
               <div className="post-icon">🎯</div>
               <div>
                 <div className="post-label">Applying for</div>
-                <div className="post-name-large">Solution Architect</div>
+                <div className="post-name-large">
+                  Solution Architect, Medical Officer & District Medical Officer
+                </div>
               </div>
             </div>
           </div>
@@ -709,6 +712,31 @@ export default function UserDashboard() {
                 <h2 className="card-title">Personal Details</h2>
               </div>
               <div className="card-body">
+                <div
+                  className="field-grid"
+                  style={{ gridTemplateColumns: "1fr" }}
+                >
+                  <FieldGroup label="Post Applied For" required>
+                    <select
+                      name="post_applied"
+                      onChange={handleChange}
+                      className="field-input"
+                      value={form.post_applied}
+                      required
+                    >
+                      <option value="">— Select Post —</option>
+                      <option value="solution_architect">
+                        Solution Architect
+                      </option>
+                      <option value="medical_officer">Medical Officer</option>
+                      <option value="district_medical_officer">
+                        District Medical Officer
+                      </option>
+                    </select>
+                  </FieldGroup>
+                </div>
+                <div style={{ marginTop: "1.25rem" }} />
+
                 <div
                   className="field-grid"
                   style={{ gridTemplateColumns: "1fr" }}
