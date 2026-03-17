@@ -662,7 +662,9 @@ export default function UserDashboard() {
               <div>
                 <div className="header-title">
                   Online Application Form
-                  <p className="text-sm text-gray-200">For any issues, please mail to it@aaasassam.in</p>
+                  <p className="text-sm text-gray-200">
+                    For any issues, please mail to it@aaasassam.in
+                  </p>
                   {/* <span className="header-role">Solution Architect</span> */}
                 </div>
                 {/* <div className="header-subtitle">
@@ -719,7 +721,7 @@ export default function UserDashboard() {
                 >
                   <FieldGroup label="Post Applied For" required>
                     <select
-                      name="post_applied"
+                      name="applied_for"
                       onChange={handleChange}
                       className="field-input"
                       value={form.post_applied}
