@@ -626,6 +626,7 @@ export default function UserDashboard() {
 
       setShowToast(true);
       setTimeout(() => setShowToast(false), 4000);
+	  navigate("/view-application");
     } catch (err) {
       const parsed = parseErrors(err);
       setErrors(parsed);
