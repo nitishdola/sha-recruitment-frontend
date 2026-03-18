@@ -518,7 +518,7 @@ function ErrorPanel({ errors, onDismiss }) {
 
 export default function UserDashboard() {
   const [form, setForm] = useState({
-    post_applied: "",
+    applied_for: "",
     name: "",
     email: "",
     mobile: "",
@@ -724,7 +724,7 @@ export default function UserDashboard() {
                       name="applied_for"
                       onChange={handleChange}
                       className="field-input"
-                      value={form.post_applied}
+                      value={form.handleChange}
                       required
                     >
                       <option value="">— Select Post —</option>
