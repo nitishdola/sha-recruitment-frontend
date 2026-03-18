@@ -1163,7 +1163,7 @@ export default function UserDashboard() {
                   <UploadItem
                     name="resume"
                     label="Resume / CV"
-                    description="Updated curriculum vitae"
+                    description="Updated curriculum vitae (pdf only)"
                     files={files}
                     onChange={handleFile}
                   />
