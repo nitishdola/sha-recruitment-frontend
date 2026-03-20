@@ -626,7 +626,7 @@ export default function UserDashboard() {
 
       setShowToast(true);
       setTimeout(() => setShowToast(false), 4000);
-	  navigate("/view-application");
+      navigate("/view-application");
     } catch (err) {
       const parsed = parseErrors(err);
       setErrors(parsed);
@@ -686,7 +686,8 @@ export default function UserDashboard() {
               <div>
                 <div className="post-label">Applying for</div>
                 <div className="post-name-large">
-                  Solution Architect, Medical Officer & District Medical Officer
+                  {/*Solution Architect,*/} Medical Officer & District Medical
+                  Officer
                 </div>
               </div>
             </div>
@@ -720,7 +721,7 @@ export default function UserDashboard() {
                   className="field-grid"
                   style={{ gridTemplateColumns: "1fr" }}
                 >
-                  <FieldGroup label="Post Applied For" required>
+                  {/*<FieldGroup label="Post Applied For" required>
                     <select
                       name="applied_for"
                       onChange={handleChange}
@@ -737,7 +738,7 @@ export default function UserDashboard() {
                         District Medical Officer
                       </option>
                     </select>
-                  </FieldGroup>
+                  </FieldGroup>*/}
                 </div>
                 <div style={{ marginTop: "1.25rem" }} />
 
