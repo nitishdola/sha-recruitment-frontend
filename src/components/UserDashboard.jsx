@@ -297,22 +297,37 @@ const styles = `
 
   .data-table th:first-child { border-radius: 10px 0 0 0; }
   .data-table th:last-child  { border-radius: 0 10px 0 0; }
-  .data-table td { padding: 0; border-bottom: 1px solid #f1f5f9; }
+  .data-table td { padding: 6px 8px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
   .data-table tr:nth-child(even) td { background: #f8faff; }
   .data-table tr:last-child td { border-bottom: none; }
 
   .qual-cell {
     padding: 10px 12px; font-weight: 600; color: #334155;
     white-space: nowrap; background: #f8faff !important; border-right: 2px solid #e2e8f0;
+    display: block;
   }
 
   .table-input {
-    width: 100%; border: none; padding: 10px 12px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.875rem;
-    background: transparent; color: #1e293b; outline: none; transition: background 0.2s;
+    width: 100%;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 9px 11px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    background: #fafbff;
+    color: #1e293b;
+    outline: none;
+    transition: all 0.2s ease;
   }
 
-  .table-input:focus { background: #eff6ff; box-shadow: inset 0 0 0 2px #1e40af; }
+  .table-input:focus {
+    border-color: #1e40af;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.08);
+  }
+
+  .table-input::placeholder { color: #94a3b8; }
+  select.table-input { cursor: pointer; }
 
   .upload-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
 
@@ -435,8 +450,6 @@ const styles = `
 `;
 
 // ── Error parser ──────────────────────────────────────────────────────────────
-// Handles Laravel validation shape: { errors: { field: ["msg",...] } }
-// and plain: { message: "..." }
 function parseErrors(err) {
   const data = err?.response?.data;
   if (!data) return ["Something went wrong. Please try again."];
@@ -630,7 +643,6 @@ export default function UserDashboard() {
     } catch (err) {
       const parsed = parseErrors(err);
       setErrors(parsed);
-      // Scroll to error panel
       setTimeout(() => {
         document
           .getElementById("error-anchor")
@@ -666,11 +678,7 @@ export default function UserDashboard() {
                   <p className="text-sm text-gray-200">
                     For any issues, please mail to it@aaasassam.in
                   </p>
-                  {/* <span className="header-role">Solution Architect</span> */}
                 </div>
-                {/* <div className="header-subtitle">
-                  Apply for Solution Architect Online
-                </div> */}
               </div>
             </div>
             <button onClick={logout} className="logout-btn">
@@ -686,8 +694,7 @@ export default function UserDashboard() {
               <div>
                 <div className="post-label">Applying for</div>
                 <div className="post-name-large">
-                  {/*Solution Architect,*/} Medical Officer & District Medical
-                  Officer
+                  Medical Officer & District Medical Officer
                 </div>
               </div>
             </div>
@@ -730,9 +737,6 @@ export default function UserDashboard() {
                       required
                     >
                       <option value="">— Select Post —</option>
-                      {/* <option value="solution_architect">
-                        Solution Architect
-                      </option> */}
                       <option value="medical_officer">Medical Officer</option>
                       <option value="district_medical_officer">
                         District Medical Officer
@@ -741,7 +745,6 @@ export default function UserDashboard() {
                   </FieldGroup>
                 </div>
                 <div style={{ marginTop: "1.25rem" }} />
-
                 <div
                   className="field-grid"
                   style={{ gridTemplateColumns: "1fr" }}
@@ -908,7 +911,7 @@ export default function UserDashboard() {
                         <td>
                           <input
                             className="table-input"
-                            placeholder=""
+                            placeholder="e.g. Science"
                             onChange={(e) =>
                               updateEducation(index, "stream", e.target.value)
                             }
@@ -917,7 +920,7 @@ export default function UserDashboard() {
                         <td>
                           <input
                             className="table-input"
-                            placeholder=""
+                            placeholder="e.g. SEBA"
                             onChange={(e) =>
                               updateEducation(index, "board", e.target.value)
                             }
@@ -926,7 +929,7 @@ export default function UserDashboard() {
                         <td>
                           <input
                             className="table-input"
-                            placeholder=""
+                            placeholder="e.g. 85"
                             onChange={(e) =>
                               updateEducation(
                                 index,
@@ -1173,7 +1176,7 @@ export default function UserDashboard() {
               </div>
             </div>
 
-            {/* ERROR PANEL — anchored for smooth scroll */}
+            {/* ERROR PANEL */}
             <div id="error-anchor">
               <ErrorPanel errors={errors} onDismiss={() => setErrors([])} />
             </div>
