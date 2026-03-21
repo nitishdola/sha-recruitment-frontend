@@ -574,7 +574,7 @@ export default function Login() {
     try {
       setSendingOtp(true);
       await api.post("/send-otp", { mobile, recaptcha_token: captchaToken });
-	  console.log(api);
+      console.log(api);
       setOtpSent(true);
       setTimer(60);
     } catch (e) {
@@ -681,7 +681,9 @@ export default function Login() {
             </div>
             <div className="login-org"> Recruitment</div>
             <div className="login-title">Atal Amrit Abhiyan Society</div>
-            <div className="login-subtitle">Post - Solution Architect</div>
+            <div className="login-subtitle">
+              Post - Medical Officer & District Medical Officer
+            </div>
           </div>
 
           {/* BODY */}
