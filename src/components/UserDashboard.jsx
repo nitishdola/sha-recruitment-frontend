@@ -721,7 +721,7 @@ export default function UserDashboard() {
                   className="field-grid"
                   style={{ gridTemplateColumns: "1fr" }}
                 >
-                  {/*<FieldGroup label="Post Applied For" required>
+                  <FieldGroup label="Post Applied For" required>
                     <select
                       name="applied_for"
                       onChange={handleChange}
@@ -730,15 +730,15 @@ export default function UserDashboard() {
                       required
                     >
                       <option value="">— Select Post —</option>
-                      <option value="solution_architect">
+                      {/* <option value="solution_architect">
                         Solution Architect
-                      </option>
+                      </option> */}
                       <option value="medical_officer">Medical Officer</option>
                       <option value="district_medical_officer">
                         District Medical Officer
                       </option>
                     </select>
-                  </FieldGroup>*/}
+                  </FieldGroup>
                 </div>
                 <div style={{ marginTop: "1.25rem" }} />
 
