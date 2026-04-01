@@ -11,8 +11,8 @@ function App() {
         {/* <Route path="/" element={<Login />} /> */}
         {/* <Route path="/" element={<PortalDown />} /> */}
         <Route path="/" element={<SubmissionClosed />} />
-        <Route path="/user-dashboard" element={<UserDashboard />} />
-        <Route path="/view-application" element={<ViewApplication />} />
+        {/* <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/view-application" element={<ViewApplication />} /> */}
       </Routes>
     </BrowserRouter>
   );
